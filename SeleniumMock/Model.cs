@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KeibaRankChecker
+﻿namespace SeleniumMock
 {
     internal struct Horse
     {
@@ -13,7 +7,7 @@ namespace KeibaRankChecker
         public int Number { get; set; }
         public string Name { get; set; }
         public string SexAge { get; set; }
-        public string Weight { get; set; }
+        public double Weight { get; set; }
         public string Jockey { get; set; }
         public double Odds { get; set; }
         public int Popular { get; set; }
@@ -28,7 +22,14 @@ namespace KeibaRankChecker
         public int FrameScore { get; set; }
         public int PositionScore { get; set; }
         public int OtherScore { get; set; }
+        public string Remarks { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Frame,-2} | {Number,-2} | {Name.PadRight(9, '　')} | {SexAge} | {string.Format("{0:F1}", Weight),-4} | {Jockey.PadRight(5, '　')} | {string.Format("{0:F1}", Odds),-5} | {Popular,-2}";
+        }
     }
+
     internal class Model
     {
     }

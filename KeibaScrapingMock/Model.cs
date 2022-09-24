@@ -1,11 +1,21 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KeibaRankChecker
+namespace KeibaScrapingMock
 {
+    [JsonObject]
+    struct LoginData
+    {
+        [JsonProperty("mail")]
+        public string MailAddress { get; set; }
+
+        [JsonProperty("password")]
+        public string Password { get; set; }
+    };
     internal struct Horse
     {
         public string Mark { get; set; }
@@ -29,6 +39,7 @@ namespace KeibaRankChecker
         public int PositionScore { get; set; }
         public int OtherScore { get; set; }
     }
+
     internal class Model
     {
     }
